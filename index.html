@@ -521,8 +521,11 @@
         </label>
         <label class="order-field">
           <span>Телефон</span>
-          <input type="tel" name="phone" id="order-phone" autocomplete="tel" required placeholder="+380 XX XXX XX XX" value="+380 ">
-          <small class="order-field-hint">Вкажіть номер разом із кодом країни, наприклад +380 63 458 30 73</small>
+          <div class="order-phone-group">
+            <span class="order-phone-code">+38</span>
+            <input type="tel" name="phone" id="order-phone" autocomplete="tel" required placeholder="0XX XXX XX XX" inputmode="numeric">
+          </div>
+          <small class="order-field-hint">Наприклад: 063 458 30 73</small>
         </label>
         <input type="text" name="website" class="order-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
         <p class="order-error" id="order-error" hidden></p>

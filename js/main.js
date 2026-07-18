@@ -158,7 +158,8 @@
     orderForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var name = orderNameInput.value.trim();
-      var phone = orderPhoneInput.value.trim();
+      var phoneLocal = orderPhoneInput.value.trim();
+      var phone = phoneLocal ? '+38 ' + phoneLocal : '';
       var honeypot = orderForm.querySelector('[name="website"]');
 
       if (honeypot && honeypot.value) return; // bot filled the trap field — silently drop
