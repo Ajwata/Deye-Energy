@@ -410,6 +410,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible{
   outline:none; border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-light);
 }
 .order-field input:invalid:not(:placeholder-shown){ border-color: var(--color-accent); }
+.order-field-hint{ display:block; margin-top: 6px; font-size:.78rem; color: var(--color-muted); }
 
 .order-error{
   color: var(--color-accent-dark); background: #fee2e2; border-radius: var(--radius-sm);

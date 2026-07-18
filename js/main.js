@@ -14,7 +14,7 @@
   // switch to the fully-hidden version later.
   // ===================================================================
   var TELEGRAM_BOT_TOKEN = '8951364593:AAGViIz0fjWeA0kVLhABXx5zsbGnwGVR2W0';
-  var TELEGRAM_CHAT_ID = '-5491949453';
+  var TELEGRAM_CHAT_ID = '-1004477597956';
 
   // Mobile nav toggle
   var header = document.querySelector('.site-header');
@@ -203,7 +203,14 @@
         body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text })
       })
         .then(function (res) {
-          if (!res.ok) throw new Error('Telegram API error');
+          if (!res.ok) {
+            // Log the reason so it's visible in DevTools -> Console for debugging
+            // (e.g. Telegram returns "group migrated to supergroup" with a new
+            // chat id whenever the group's settings change — if that happens,
+            // update TELEGRAM_CHAT_ID above with the new id from the error).
+            res.json().then(function (body) { console.error('Telegram sendMessage failed:', body); }).catch(function () {});
+            throw new Error('Telegram API error');
+          }
           showSuccess();
         })
         .catch(function () {
