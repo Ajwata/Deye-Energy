@@ -397,7 +397,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible{
 .order-honeypot{
   position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0;
 }
-.order-field span{
+.order-field > span{
   display:block; font-family: var(--font-display); font-weight:600; font-size:.88rem;
   margin-bottom: 6px; color: var(--color-text);
 }
@@ -418,10 +418,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible{
 }
 .order-phone-group:focus-within{ border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-light); }
 .order-phone-code{
-  display:flex; align-items:center; gap:.5em; padding: 0 10px 0 14px; font: inherit; font-weight:700;
-  font-size:1rem; color: var(--color-text); background: var(--color-border); flex-shrink:0;
+  display:flex; flex-direction:row; flex-wrap:nowrap; align-items:center; gap:.5em;
+  padding: 0 10px 0 14px; font: inherit; font-weight:700; font-size:1rem; line-height:1;
+  color: var(--color-text); background: var(--color-border); flex-shrink:0; white-space:nowrap;
 }
-.order-phone-flag{ width:20px; height:auto; border-radius:2px; flex-shrink:0; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
+.order-phone-flag{ width:20px; height:14px; flex:0 0 20px; border-radius:2px; box-shadow: 0 0 0 1px rgba(0,0,0,.08); display:block; }
 .order-phone-group input{
   border:none !important; background:transparent; border-radius:0; box-shadow:none !important;
   flex:1; min-width:0; padding-left:8px;
